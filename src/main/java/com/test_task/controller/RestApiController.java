@@ -1,7 +1,6 @@
 package com.test_task.controller;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import com.test_task.model.Candle;
 import com.test_task.model.Instrument;
