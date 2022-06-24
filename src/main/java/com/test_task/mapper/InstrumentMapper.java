@@ -8,8 +8,7 @@ public class InstrumentMapper {
         Instrument instrument = new Instrument(
                 0,
                 instrumentDTO.getData().getDescription(),
-                instrumentDTO.getData().getIsin(),
-                instrumentDTO.getType()
+                instrumentDTO.getData().getIsin()
         );
         return instrument;
     }

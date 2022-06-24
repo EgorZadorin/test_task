@@ -22,9 +22,6 @@ public class Quote {
     @Column(name = "price")
     private double price;
 
-    @Column(name = "type")
-    private String type;
-
     @Column(name = "timestamp")
     private Timestamp ts;
 }

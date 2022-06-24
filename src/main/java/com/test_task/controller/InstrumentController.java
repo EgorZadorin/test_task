@@ -5,6 +5,7 @@ import java.util.List;
 import com.test_task.model.Instrument;
 import com.test_task.repository.InstrumentRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -38,20 +39,6 @@ public class InstrumentController {
     @GetMapping("/instruments")
     public ResponseEntity<List<Instrument>> getAllInstruments(@RequestParam(required = false) String title) {
         try {
-            List<Instrument> toDelete = new ArrayList<Instrument>(instrumentRepository.findByType("DELETE"));
-
-            // Somehow method .deleteByIsin hasn't worked properly, and I could not find out why
-            List<Instrument> toDeleteHelp = new ArrayList<Instrument>();
-
-            for (Instrument instrument : toDelete) {
-                String isinToDelete = instrument.getIsin();
-                toDeleteHelp.addAll(instrumentRepository.findByIsin(isinToDelete));
-            }
-            for (Instrument instrument : toDeleteHelp) {
-                Long idToDelete = instrument.getId();
-                instrumentRepository.deleteById(idToDelete);
-            }
-
             List<Instrument> instruments = new ArrayList<Instrument>();
             if (title == null)
                 instrumentRepository.findAll().forEach(instruments::add);

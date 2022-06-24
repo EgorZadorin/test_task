@@ -22,6 +22,4 @@ public class Instrument {
     @Column(name = "ISIN")
     private String isin;
 
-    @Column(name = "type")
-    private String type;
 }

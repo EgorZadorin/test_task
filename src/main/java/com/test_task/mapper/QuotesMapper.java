@@ -12,7 +12,6 @@ public class QuotesMapper {
                 0,
                 quoteDTO.getData().getIsin(),
                 quoteDTO.getData().getPrice(),
-                quoteDTO.getType(),
                 new Timestamp(System.currentTimeMillis())
         );
         return quote;
