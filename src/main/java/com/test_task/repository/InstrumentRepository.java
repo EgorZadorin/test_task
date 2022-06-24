@@ -9,5 +9,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface InstrumentRepository extends CrudRepository<Instrument, Long> {
     List<Instrument> findByIsin(String isin);
-    void deleteByIsin(String isin);
 }
