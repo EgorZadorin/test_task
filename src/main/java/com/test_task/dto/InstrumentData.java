@@ -1,14 +1,11 @@
-package com.test_task.model;
-
+package com.test_task.dto;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @lombok.Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class QuoteData {
+public class InstrumentData {
+    public String description;
     public String isin;
-    public double price;
 }
-
-

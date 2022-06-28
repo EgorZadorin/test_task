@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  test-task-db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DATABASE=test_task
+  test-task:
+    build: .
+    ports:
+      - "8081:8081"
+    depends_on:
+      - test-task-db
